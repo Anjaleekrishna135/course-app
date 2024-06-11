@@ -1,53 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavBar } from './NavBar'
+import axios from 'axios';
 
 const View = () => {
+    const [data, changeData] = useState([]);
+
+    const fetchData = () => {
+        axios.get() 
+            .then((response) => {
+                changeData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching data: ", error);
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <div>
             <NavBar />
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
-
-                        <th scope="col">course title</th>
-                        <th scope="col">course description</th>
-                        <th scope="col">date</th>
-                        <th scope="col">duration</th>
-                        <th scope="col">venue</th>
-                        <th scope="col">trainer name</th>
+                        <th scope="col">Course Title</th>
+                        <th scope="col">Course Description</th>
+                        <th scope="col">Course Date</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Trainer Name</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-
-                        <td>SE</td>
-                        <td>software engineering</td>
-                        <td>2-4-24</td>
-                        <td>5</td>
-                        <td>Fisat</td>
-                        <td>Rakhi</td>
-                    </tr>
-                    <tr>
-
-                        <td>stati</td>
-                        <td>applied statitics</td>
-                        <td>4-4-24</td>
-                        <td>6</td>
-                        <td>fisat</td>
-                        <td>rose</td>
-                    </tr>
-                    <tr>
-                        <td>oops</td>
-                        <td>java</td>
-                        <td>6-4-24</td>
-                        <td>6</td>
-                        <td>fisat</td>
-                        <td>manju</td>
-                    </tr>
+                    {data.map((value, index) => (
+                        <tr key={index}>
+                            <td>{value.coursetitle}</td>
+                            <td>{value.coursedescription}</td>
+                            <td>{value.coursedate}</td>
+                            <td>{value.duration}</td>
+                            <td>{value.venue}</td>
+                            <td>{value.trainername}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
-export default View
+export default View;
