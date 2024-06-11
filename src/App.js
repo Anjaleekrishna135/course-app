@@ -3,6 +3,7 @@ import './App.css';
 import AddCourse from './components/AddCourse';
 import Search from './components/Search';
 import View from './components/View';
+import { NavBar } from './components/NavBar';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <AddCourse />
       <Search />
       <View />
+      <NavBar />
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React from 'react'
+import { NavBar } from './NavBar'
 
 const View = () => {
     return (
         <div>
+            <NavBar />
             <table class="table">
                 <thead>
                     <tr>
