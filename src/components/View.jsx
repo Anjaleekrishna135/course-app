@@ -6,7 +6,7 @@ const View = () => {
     const [data, changeData] = useState([]);
 
     const fetchData = () => {
-        axios.get() 
+        axios.get("http://localhost:8054/view") 
             .then((response) => {
                 changeData(response.data);
             })
@@ -36,7 +36,7 @@ const View = () => {
                 <tbody>
                     {data.map((value, index) => (
                         <tr key={index}>
-                            <td>{value.coursetitle}</td>
+                            <td>{value.coursename}</td>
                             <td>{value.coursedescription}</td>
                             <td>{value.coursedate}</td>
                             <td>{value.duration}</td>
