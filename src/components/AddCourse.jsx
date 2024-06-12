@@ -41,7 +41,7 @@ const AddCourse = () => {
                         <div className="row g-3">
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">coursename</label>
-                                <input type="text" className="form-control" name='coursname' value={data.coursetitle} onChange={inputHandler} />
+                                <input type="text" className="form-control" name='coursename' value={data.coursetitle} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">coursedescription</label>
@@ -49,7 +49,7 @@ const AddCourse = () => {
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">coursedate</label>
-                                <input type="date" name="" id="" className="form-control" name='coursedate' value={data.coursedate} onChange={inputHandler} />
+                                <input type="date"  id="" className="form-control" name='coursedate' value={data.coursedate} onChange={inputHandler} />
 
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
