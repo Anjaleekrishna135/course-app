@@ -5,7 +5,7 @@ import axios from 'axios'
 const Search = () => {
     const [data, setData] = useState(
         {
-            "coursename":" ",
+            "coursename": " ",
         }
 
     )
@@ -20,12 +20,12 @@ const Search = () => {
         axios.post("http://localhost:8083/search", data).then((response) => {
             setResult(response.data)
         }
-    ).catch(
-        (error)=>{
-            console.log(error.message)
-            alert(error.map)
-        }
-    ).finally()
+        ).catch(
+            (error) => {
+                console.log(error.message)
+                alert(error.map)
+            }
+        ).finally()
 
 
     }
@@ -70,6 +70,8 @@ const Search = () => {
                                                             <td>{value.duration}</td>
                                                             <td>{value.venue}</td>
                                                             <td>{value.trainername}</td>
+
+                                                            <td><button className="btn btn-danger">delete</button></td>
                                                         </tr>
 
                                                     })
