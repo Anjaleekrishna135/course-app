@@ -6,7 +6,7 @@ const View = () => {
     const [data, changeData] = useState([]);
 
     const fetchData = () => {
-        axios.get("http://localhost:8054/view") 
+        axios.get("http://localhost:8083/view") 
             .then((response) => {
                 changeData(response.data);
             })
